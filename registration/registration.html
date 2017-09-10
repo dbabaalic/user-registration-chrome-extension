@@ -1,0 +1,36 @@
+<div>
+    <div>
+        <h1>Sign up</h1>
+    </div>
+    <form name="register" novalidate>
+        <div>
+            <label for="firstName">First Name</label>
+            <input ng-model="user.firstname" id="firstName" type="text" required>
+        </div>
+        <p ng-show="form-register.firstName.$error.required">Last name is required.</p>
+        <div>
+            <label for="lastName">Last Name</label>
+            <input ng-model="user.lastname" id="lastName" type="text" required>
+        </div>
+        <p ng-show="form-register.lastName.$error.required">Last name is required.</p>
+        <div>
+            <label for="email">Email</label>
+            <input id="email" type="email" name="email" ng-model="user.email" required>
+        </div>
+        <p ng-show="form-register.email.$error.email">Your email is invalid.</p>
+        <div>
+            <label for="password">Password</label>
+            <input id="password" type="password" name="password" ng-model="user.password" ng-minlength='6' required>
+        </div>
+        <p ng-show="form-register.password.$error.minlength || form.password.$invalid">Your password must be at
+            least 6 characters.</p>
+        <div>
+            <button type="button" ng-click="doRegister()" ng-disabled="form-register.$invalid">
+                Done
+            </button>
+            <button type="button" ng-click="go('/')">
+                Cancel
+            </button>
+        </div>
+    </form>
+</div>

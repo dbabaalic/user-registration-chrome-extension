@@ -1,0 +1,21 @@
+<div>
+    <div>
+        <h1>Login</h1>
+    </div>
+    <form name="login" novalidate>
+        <div>
+            <label for="email">Email</label>
+            <input ng-model="credentials.email" id="email" type="text" required>
+        </div>
+        <p ng-show="form.email.$invalid">Email is required</p>
+        <div>
+            <label for="password">Password</label>
+            <input id="password" type="password" name="password" ng-model="credentials.password" required>
+        </div>
+        <div>
+            <button type="button" ng-click="doLogin()" ng-disabled="form-login.$invalid">Login</button>
+            <button type="button">Cancel</button>
+        </div>
+        <button type="button" ng-click="go('/registration')">Sign up</button>
+    </form>
+</div>
